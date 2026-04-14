@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+    <title>Lenn 的前端實驗室</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+</head>
+
+<body>
+    <div class="profile-pic">LC</div>
+    <button id="theme-toggle" class="btn" style="margin-bottom: 20px;">切換夜間模式 🌙</button>
+    <h1>哈囉！我是 Lenn 👋</h1>
+    <p id="time-display" style="color: #3498db; font-weight: bold;"></p>
+    <p id="greeting-message" style="color: #e67e22; font-size: 16px;"></p>
+    <p class="typing-container">
+        <span id="typing-text"></span><span class="cursor">|</span>
+    </p>
+    <div class="social-links">
+        <a href="mailto:lenn.cy.chen@gmail.com" class="social-btn">📧 Email</a>
+    
+        <a href="https://github.com/lenn-cy-chen" target="_blank" class="social-btn">🐙 GitHub</a>
+    
+        <a href="#" class="social-btn">💼 LinkedIn</a>
+    </div>
+    <div class="skills-container">
+        <span class="skill-tag">HTML5</span>
+        <span class="skill-tag">CSS3</span>
+        <span class="skill-tag">JavaScript</span>
+        <span class="skill-tag">RWD 響應式排版</span>
+        <span class="skill-tag">Git / GitHub</span>
+    </div>
+
+    <div class="projects-container">
+        <div class="project-card">
+            <h3>晨間財經儀表板</h3>
+            <p>每天早上 7 點自動彙整台股 (TAIEX)、美股走勢與最新早報的專屬資訊站。</p>
+            <div>
+                <span class="tag">JavaScript</span>
+                <span class="tag">API</span>
+            </div>
+            <br>
+            <a href="./financial-dashboard/index.html" class="card-btn">查看專案 🚀</a>
+        </div>
+
+        <div class="project-card">
+            <h3>響應式切版練習</h3>
+            <p>運用 Flexbox 與 Grid 打造在手機和電腦上都完美的網頁設計。</p>
+            <div>
+                <span class="tag">HTML/CSS</span>
+                <span class="tag">RWD</span>
+            </div>
+            <br>
+            <a href="https://github.com/lenn-cy-chen" target="_blank" class="card-btn">查看作品</a>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 Lenn Chen. All rights reserved.
+    </footer>
+    <script src="main.js"></script>
+</body>
+
+</html>

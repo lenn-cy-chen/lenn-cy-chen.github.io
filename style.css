@@ -1,0 +1,267 @@
+body {
+    font-family: 'Noto Sans TC',sans-serif;
+    text-align: center;
+    margin: 0;
+    padding-top: 5%;
+/* 這會從左上角的極淺灰，漸層到右下角的冰藍白 */
+    background: linear-gradient(135deg, #f8f9fa 0%, #e2eafc 100%);
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* 確保網頁至少有整個螢幕高 */
+}
+
+.profile-pic {
+    width: 120px;
+    height: 120px;
+    background-color: #2c3e50;
+    color: white;
+    border-radius: 50%;
+    margin: 0 auto 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    transition: all 0.6s ease;
+        /* 讓變化有 0.6 秒的流暢過渡 */
+}
+/* --- 頭像滑鼠移過去的特效：360度旋轉 + 科技發光 --- */
+.profile-pic:hover {
+    transform: rotate(360deg) scale(1.05);
+    /* 轉一圈並稍微放大 */
+    box-shadow: 0 0 25px rgba(44, 62, 80, 0.5);
+    /* 產生光暈 */
+}
+
+/* 夜間模式的發光顏色改成白色 */
+body.dark-theme .profile-pic:hover {
+    box-shadow: 0 0 25px rgba(248, 249, 250, 0.8);
+}
+
+h1 {
+    color: #2c3e50;
+}
+
+p {
+    color: #666;
+    font-size: 18px;
+}
+
+.projects-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+    padding: 0 20px;
+    /* 避免手機版時卡片貼齊螢幕邊緣 */
+}
+
+.project-card {
+/* --- 這是全新的毛玻璃卡片配方 --- */
+    background: rgba(255, 255, 255, 0.6);
+    /* 60% 透明度的白色 */
+    backdrop-filter: blur(12px);
+    /* 讓背後的漸層產生模糊的磨砂效果 */
+    -webkit-backdrop-filter: blur(12px);
+    /* 支援蘋果 Safari 瀏覽器 */
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    /* 加上細細的高光白邊框，增加玻璃邊緣的立體感 */
+
+    width: 280px;
+    padding: 25px;
+    border-radius: 16px;
+    /* 圓角加大一點，看起來更柔和 */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+    /* 讓陰影變得更廣、更柔和 */
+    text-align: left;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    /* 讓按鈕可以自動被推到卡片底部 */
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+}
+
+.project-card h3 {
+    margin-top: 0;
+    color: #2c3e50;
+}
+
+.tag {
+    background-color: #e9ecef;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    color: #555;
+    display: inline-block;
+    margin-top: 10px;
+    margin-right: 5px;
+}
+
+/* 這是新的：專屬卡片內的小按鈕 */
+.card-btn {
+    display: inline-block;
+    margin-top: auto;
+    /* 把按鈕推到卡片最下方 */
+    padding: 10px 0;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 14px;
+    text-align: center;
+    transition: 0.3s;
+    width: 100%;
+    /* 讓按鈕填滿卡片寬度 */
+}
+
+.card-btn:hover {
+    background-color: #2980b9;
+}
+
+/* 這是新的：專業的頁尾版權宣告 */
+footer {
+    margin-top: auto;
+    /* 自動推到網頁最底下 */
+    padding: 30px 0;
+    color: #aaa;
+    font-size: 14px;
+}
+
+/* 讓夜間模式下的標題也變成白色 */
+body.dark-theme h1,
+body.dark-theme .project-card h3 {
+    color: #f8f9fa;
+}
+
+/* --- 打字機特效專屬 --- */
+.typing-container {
+    font-size: 18px;
+    color: #666;
+    height: 27px;
+    /* 固定高度，避免打字時下方內容跳動 */
+    margin-bottom: 20px;
+}
+
+.cursor {
+    font-weight: bold;
+    color: #2c3e50;
+    animation: blink 0.8s infinite;
+    /* 呼叫閃爍動畫，無限循環 */
+}
+
+/* 定義閃爍動畫的明暗變化 */
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+/* 順便設定一下夜間模式的打字機顏色 */
+body.dark-theme .cursor {
+    color: #f8f9fa;
+}
+
+body.dark-theme .typing-container {
+    color: #aaa;
+}
+
+/* --- 聯絡按鈕專屬樣式 --- */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    /* 按鈕之間的間距 */
+    margin-bottom: 40px;
+    /* 把它跟下方的作品展示櫃推開一點距離 */
+}
+
+.social-btn {
+    padding: 8px 16px;
+    border: 2px solid #2c3e50;
+    /* 深藍色邊框 */
+    color: #2c3e50;
+    /* 深藍色文字 */
+    text-decoration: none;
+    /* 去掉醜醜的底線 */
+    border-radius: 20px;
+    /* 變身完美的膠囊形狀 */
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    /* 動畫過渡效果 */
+}
+
+/* 滑鼠移過去的特效：背景填滿，文字變白，稍微往上浮 */
+.social-btn:hover {
+    background-color: #2c3e50;
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* 把原本的 body.dark-theme 裡面的 background-color 改成 background */
+body.dark-theme {
+    background: #1a1a1a;
+    color: #f8f9fa;
+}
+
+/* 讓夜間模式的卡片也變成深色的毛玻璃！ */
+body.dark-theme .project-card {
+    background: rgba(44, 44, 44, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}   
+
+/* --- 技術能力標籤專屬樣式 --- */
+.skills-container {
+    margin-bottom: 50px;
+    /* 跟下方的作品區塊拉開距離 */
+}
+
+.skill-tag {
+    display: inline-block;
+    background: rgba(44, 62, 80, 0.08);
+    /* 淡淡的深藍色透明背景 */
+    color: #2c3e50;
+    padding: 8px 18px;
+    margin: 6px;
+    border-radius: 8px;
+    /* 這裡用小圓角，跟聯絡按鈕的膠囊形狀做出區隔 */
+    font-size: 14px;
+    font-weight: bold;
+    border: 1px solid rgba(44, 62, 80, 0.15);
+    /* 加一點細邊框增加精緻度 */
+    transition: all 0.3s ease;
+}
+
+/* 滑鼠移過去的特效：背景填滿，文字變白，稍微放大一點點 */
+.skill-tag:hover {
+    background: #2c3e50;
+    color: white;
+    transform: scale(1.08);
+    box-shadow: 0 4px 12px rgba(44, 62, 80, 0.2);
+}
+
+/* --- 夜間模式的技能標籤 --- */
+body.dark-theme .skill-tag {
+    background: rgba(255, 255, 255, 0.08);
+    color: #f8f9fa;
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+body.dark-theme .skill-tag:hover {
+    background: #f8f9fa;
+    color: #1a1a1a;
+}

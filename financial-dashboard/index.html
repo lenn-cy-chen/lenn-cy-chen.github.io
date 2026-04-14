@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>晨間財經儀表板</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-logo">
+            <span style="color: #3498db; font-weight: bold;">Lenn</span>.Dashboard
+        </div>
+
+        <div class="theme-toggle" id="theme-toggle"
+            style="cursor: pointer; font-size: 22px; transition: 0.3s; display: flex; align-items: center;">
+            <span class="material-symbols-rounded">dark_mode</span>
+        </div>
+
+        <div class="hamburger" id="hamburger">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </div>
+
+        <ul class="nav-links" id="nav-links">
+            <li><a href="../index.html" style="display: flex; align-items: center; gap: 5px;"><span
+                        class="material-symbols-rounded" style="font-size: 20px;">arrow_back</span> 回作品集主頁</a></li>
+            <li><a href="#" style="display: flex; align-items: center; gap: 5px;"><span class="material-symbols-rounded"
+                        style="font-size: 20px;">settings</span> 儀表板設定</a></li>
+            <li><a href="#" style="display: flex; align-items: center; gap: 5px;"><span class="material-symbols-rounded"
+                        style="font-size: 20px;">account_circle</span> 關於作者</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1 id="greeting-title" style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+            <span class="material-symbols-rounded" style="font-size: 36px; color: #3498db;">trending_up</span> 財經儀表板
+        </h1>
+        <p id="current-time" style="font-family: monospace; font-size: 1.2em;">時間載入中...</p>
+    </header>
+
+    <div
+        style="text-align: center; margin-bottom: 20px; display: flex; justify-content: center; align-items: center; gap: 15px;">
+        <button id="refresh-btn" class="refresh-btn"
+            style="display: flex; align-items: center; gap: 8px; justify-content: center;">
+            <span class="material-symbols-rounded" style="font-size: 20px;">sync</span> 同步最新數據
+        </button>
+        <span id="loading-spinner" class="spinner" style="display: none; align-items: center; gap: 5px;">
+            <span class="material-symbols-rounded"
+                style="animation: skeletonLoading 1.5s infinite;">hourglass_top</span> 載入中...
+        </span>
+    </div>
+
+    <main class="dashboard-container">
+
+        <section class="widget taiex-widget" onclick="restoreMarketChart('台股大盤', '#ff4d4d')" style="cursor: pointer;">
+            <h2 style="display: flex; align-items: center; gap: 8px;"><span
+                    class="material-symbols-rounded">show_chart</span> 台股大盤 (TAIEX)</h2>
+            <div id="taiex-data" class="data-box">讀取中...</div>
+        </section>
+
+        <section class="widget us-widget" onclick="restoreMarketChart('S&P 500', '#4CAF50')" style="cursor: pointer;">
+            <h2 style="display: flex; align-items: center; gap: 8px;"><span
+                    class="material-symbols-rounded">public</span> 美股標普 500</h2>
+            <div id="us-stocks-data" class="data-box">讀取中...</div>
+        </section>
+
+        <section class="widget chart-widget">
+            <h2 style="display: flex; align-items: center; gap: 8px;"><span
+                    class="material-symbols-rounded">stacked_line_chart</span> 今日大盤走勢</h2>
+            <canvas id="marketChart"></canvas>
+        </section>
+
+        <section class="widget stock-input-widget">
+            <h2 style="display: flex; align-items: center; gap: 8px;"><span
+                    class="material-symbols-rounded">track_changes</span> 新增自選股</h2>
+            <div class="input-group">
+                <input type="text" id="stock-input" placeholder="輸入股票代號 (例: 2330)" autocomplete="off">
+                <button id="add-stock-btn" class="add-btn"
+                    style="display: flex; align-items: center; justify-content: center; gap: 5px;">
+                    <span class="material-symbols-rounded" style="font-size: 20px;">add</span> 加入追蹤
+                </button>
+            </div>
+            <ul id="custom-stock-list" class="custom-stock-list">
+                <li class="empty-tip">目前尚無自選股，請從上方新增。</li>
+            </ul>
+        </section>
+
+        <section class="widget weather-widget">
+            <h2 style="display: flex; align-items: center; gap: 8px;"><span
+                    class="material-symbols-rounded">partly_cloudy_day</span> 當地天氣</h2>
+            <div id="weather-data" class="data-box">等待氣象局連線...</div>
+        </section>
+
+        <section class="widget news-widget">
+            <h2 style="display: flex; align-items: center; gap: 8px;"><span
+                    class="material-symbols-rounded">newspaper</span> 重點財經新聞</h2>
+            <ul id="news-list">
+                <li>新聞連線中...</li>
+            </ul>
+        </section>
+
+    </main>
+    <div id="news-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <button id="close-modal-btn" class="close-btn"
+                style="display: flex; align-items: center; justify-content: center; padding: 5px;">
+                <span class="material-symbols-rounded">close</span>
+            </button>
+            <h3 id="modal-title">新聞標題</h3>
+            <p id="modal-body">這裡會顯示新聞的詳細內文...</p>
+        </div>
+    </div>
+
+    <script type="module" src="main.js"></script>
+</body>
+
+</html>

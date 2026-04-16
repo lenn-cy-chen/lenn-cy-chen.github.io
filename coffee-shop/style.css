@@ -451,3 +451,355 @@ body {
         flex-direction: column;
     }
 }
+
+/* =========================================
+   📱 手機版導覽列優化
+========================================= */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+        /* 在手機版顯示漢堡圖示 */
+        z-index: 101;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        /* 預設藏在右邊螢幕外 */
+        width: 70%;
+        height: 100vh;
+        background-color: var(--bg-color);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+        transition: 0.5s ease-in-out;
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.05);
+        z-index: 100;
+    }
+
+    /* 當選單被啟動時，滑入螢幕 */
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links a {
+        font-size: 18px;
+    }
+}
+
+/* 初始狀態：往下偏移並透明 */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+/* 啟動狀態：回到原位並顯現 */
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================================
+   🛍️ 線上購物頁面專屬樣式
+========================================= */
+
+.shop-header {
+    text-align: center;
+    padding: 60px 20px 20px;
+    background-color: #FFF;
+}
+
+.shop-header h1 {
+    font-size: 36px;
+    font-weight: 300;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+.shop-header p {
+    color: var(--text-muted);
+}
+
+/* 🌟 大排版：左側邊欄 + 右網格 (Flexbox) */
+.shop-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 40px auto 100px;
+    padding: 0 5%;
+    gap: 40px;
+    align-items: flex-start;
+    /* 讓側邊欄不要跟著右邊一起拉長 */
+}
+
+/* 左側分類欄 */
+.shop-sidebar {
+    width: 250px;
+    flex-shrink: 0;
+    /* 確保側邊欄不會被壓縮 */
+    background: #FFF;
+    padding: 30px;
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    position: sticky;
+    /* 往下捲動時會吸頂 */
+    top: 100px;
+}
+
+.shop-sidebar h3 {
+    font-size: 16px;
+    margin: 0 0 20px 0;
+    letter-spacing: 1px;
+}
+
+.category-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.category-list li {
+    margin-bottom: 15px;
+}
+
+.category-list a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.category-list a:hover,
+.category-list a.active {
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+/* 右側商品網格 (Grid) */
+.shop-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 30px;
+}
+
+/* 🌟 商品卡片細節 */
+.product-card {
+    background: #FFF;
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.product-img {
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.product-info {
+    padding: 20px;
+}
+
+.roast-tag {
+    font-size: 11px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.light-roast {
+    background: #fdf2e9;
+    color: #e67e22;
+}
+
+.medium-roast {
+    background: #fdedec;
+    color: #e74c3c;
+}
+
+.dark-roast {
+    background: #eaeded;
+    color: #34495e;
+}
+
+.product-info h3 {
+    font-size: 16px;
+    margin: 0 0 5px 0;
+}
+
+.flavor {
+    color: var(--text-muted);
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.product-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-bottom .price {
+    font-weight: bold;
+    color: var(--accent-color);
+    font-size: 16px;
+}
+
+/* 購物車按鈕 */
+.add-to-cart-btn {
+    background: transparent;
+    border: 1px solid var(--text-main);
+    color: var(--text-main);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.add-to-cart-btn .material-symbols-rounded {
+    font-size: 18px;
+}
+
+.add-to-cart-btn:hover {
+    background: var(--accent-color);
+    color: #FFF;
+    border-color: var(--accent-color);
+}
+
+
+/* =========================================
+   📱 手機版 RWD 魔法：把並排變成堆疊！
+========================================= */
+@media (max-width: 900px) {
+    .shop-container {
+        flex-direction: column;
+        /* 讓側邊欄和網格從左右變成上下 */
+    }
+
+    .shop-sidebar {
+        width: 100%;
+        /* 側邊欄佔滿寬度 */
+        position: static;
+        /* 取消吸頂效果 */
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .category-list {
+        display: flex;
+        /* 把分類變成橫向滑動或折行 */
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .category-list li {
+        margin-bottom: 0;
+    }
+}
+
+/* =========================================
+   🛒 購物車微互動與 Toast 通知
+========================================= */
+
+/* 按鈕加入成功時的狀態 */
+.add-to-cart-btn.added {
+    background-color: #2ecc71;
+    /* 成功綠 */
+    border-color: #2ecc71;
+    color: #FFF;
+    transform: scale(1.1);
+    /* 點擊瞬間微微放大 */
+}
+
+/* Toast 通知容器定位 */
+.toast-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* 單個 Toast 的精緻樣式 */
+.toast {
+    background-color: var(--text-main);
+    /* 炭黑色背景 */
+    color: #FFF;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    /* 滑入動畫 */
+    animation: slideInRight 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+.toast .material-symbols-rounded {
+    color: #2ecc71;
+    /* 圖示用綠色點綴 */
+}
+
+/* 準備消失的動畫 */
+.toast.fade-out {
+    animation: fadeOutRight 0.4s ease forwards;
+}
+
+/* 定義關鍵影格 Keyframes */
+@keyframes slideInRight {
+    from {
+        transform: translateX(120%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOutRight {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateX(120%);
+        opacity: 0;
+    }
+}
+
+/* 手機版 Toast 位置微調 */
+@media (max-width: 768px) {
+    .toast-container {
+        bottom: 20px;
+        right: 20px;
+        left: 20px;
+        /* 在手機上置中並橫跨螢幕 */
+    }
+
+    .toast {
+        justify-content: center;
+        /* 文字置中 */
+    }
+}

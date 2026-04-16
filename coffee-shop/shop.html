@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lenn Coffee | 線上購物</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,300,0,0" />
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo">Lenn <span>Coffee</span></a>
+        <ul class="nav-links">
+            <li><a href="index.html#story">品牌故事</a></li>
+            <li><a href="shop.html" style="color: var(--accent-color); font-weight: bold;">線上購物</a></li>
+            <li><a href="index.html#locations">門市資訊</a></li>
+        </ul>
+        <div class="hamburger">
+            <span class="material-symbols-rounded">menu</span>
+        </div>
+    </nav>
+
+    <header class="shop-header">
+        <h1>探索風味</h1>
+        <p>為您精心烘焙的每一支豆子</p>
+    </header>
+
+    <div class="shop-container">
+
+        <aside class="shop-sidebar">
+            <h3>商品分類</h3>
+            <ul class="category-list">
+                <li><a href="#" class="active">全部商品 (12)</a></li>
+                <li><a href="#">淺焙水洗豆 (4)</a></li>
+                <li><a href="#">中焙日曬豆 (5)</a></li>
+                <li><a href="#">深焙配方豆 (3)</a></li>
+                <li><a href="#">濾掛包 / 器具 (8)</a></li>
+            </ul>
+        </aside>
+
+        <main class="shop-grid">
+            <div class="product-card">
+                <div class="product-img"
+                    style="background-image: url('https://images.unsplash.com/photo-1559525839-b184a4d698c7?auto=format&fit=crop&w=600&q=80')">
+                </div>
+                <div class="product-info">
+                    <span class="roast-tag light-roast">淺焙</span>
+                    <h3>衣索比亞 耶加雪菲</h3>
+                    <p class="flavor">茉莉花 / 檸檬 / 柑橘</p>
+                    <div class="product-bottom">
+                        <span class="price">NT$ 450</span>
+                        <button class="add-to-cart-btn"><span
+                                class="material-symbols-rounded">shopping_bag</span></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img"
+                    style="background-image: url('https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80')">
+                </div>
+                <div class="product-info">
+                    <span class="roast-tag medium-roast">中焙</span>
+                    <h3>哥倫比亞 薇拉</h3>
+                    <p class="flavor">莓果 / 焦糖 / 酒香</p>
+                    <div class="product-bottom">
+                        <span class="price">NT$ 520</span>
+                        <button class="add-to-cart-btn"><span
+                                class="material-symbols-rounded">shopping_bag</span></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img"
+                    style="background-image: url('https://images.unsplash.com/photo-1611162458324-aae1eb4129a4?auto=format&fit=crop&w=600&q=80')">
+                </div>
+                <div class="product-info">
+                    <span class="roast-tag dark-roast">深焙</span>
+                    <h3>義式經典 綜合配方</h3>
+                    <p class="flavor">黑巧克力 / 烤堅果 / 焦糖</p>
+                    <div class="product-bottom">
+                        <span class="price">NT$ 380</span>
+                        <button class="add-to-cart-btn"><span
+                                class="material-symbols-rounded">shopping_bag</span></button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <div id="toast-container" class="toast-container"></div>
+
+    <footer class="minimal-footer">
+        <div class="logo">Lenn <span>Coffee</span></div>
+        <p>&copy; 2026 Lenn Coffee Roasters. All rights reserved.</p>
+    </footer>
+    <script src="main.js"></script>
+</body>
+
+</html>

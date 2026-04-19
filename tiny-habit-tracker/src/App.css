@@ -1,0 +1,147 @@
+.app-container {
+    max-width: 600px;
+    margin: 50px auto;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    padding: 0 20px;
+}
+
+.app-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.app-header h1 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.app-header p {
+    color: #7f8c8d;
+    font-weight: bold;
+}
+
+.habit-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+    transition: transform 0.2s;
+}
+
+.habit-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+}
+
+.trigger {
+    color: #94a3b8;
+    font-size: 14px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.action {
+    margin: 0;
+    color: #1e293b;
+    font-size: 18px;
+}
+
+.btn-pending {
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    background: white;
+    color: #64748b;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-pending:hover {
+    border-color: #3b82f6;
+    color: #3b82f6;
+}
+
+.btn-completed {
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: none;
+    background: #22c55e;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* =========================================
+   新增習慣表單樣式
+========================================= */
+.add-habit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: #f8fafc;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    border: 1px dashed #cbd5e1;
+}
+
+.habit-input {
+    padding: 12px 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.habit-input:focus {
+    border-color: #3b82f6;
+}
+
+.btn-add {
+    padding: 12px;
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-add:hover {
+    background-color: #2563eb;
+}
+
+/* =========================================
+   按鈕操作區與垃圾桶樣式
+========================================= */
+.action-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* 兩個按鈕中間有一點空隙 */
+}
+
+.btn-delete {
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0.4;
+    transition: all 0.3s ease;
+    padding: 5px;
+}   
+
+.btn-delete:hover {
+    opacity: 1;
+    transform: scale(1.1);
+    /* 滑鼠游標移過去時會放大 */
+}

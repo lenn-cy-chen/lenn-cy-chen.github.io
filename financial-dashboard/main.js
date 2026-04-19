@@ -1,21 +1,17 @@
-// 🌟 1. 匯入主題管理模組
 import { fetchRealWeather } from './weather.js';
 import { initChart } from './chartManager.js';
 import { initStockManager } from './stockManager.js';
 import { initThemeManager } from './themeManager.js';
 
-// 🌟 2. 啟動主題管理系統！
 initThemeManager();
 initChart();
 initStockManager();
 
-// --- 2. API 數據串接模組 ---
 const taiexBox = document.getElementById("taiex-data");
 const usStockBox = document.getElementById("us-stocks-data");
 const newsBox = document.getElementById("news-list"); 
 const weatherBox = document.getElementById("weather-data");
 
-// 抓取剛剛新增的按鈕和載入動畫
 const refreshBtn = document.getElementById("refresh-btn");
 const spinner = document.getElementById("loading-spinner");
 
@@ -31,7 +27,6 @@ const mockApiData = {
     ]
 };
 
-// 處理資料的任務
 function fetchMarketData() {
     const taiexColor = mockApiData.taiex.isUp ? "#ff4d4d" : "#4CAF50"; 
     taiexBox.innerHTML = `
@@ -62,15 +57,13 @@ function fetchMarketData() {
         newsBox.innerHTML += `<li style="margin-bottom: 12px; border-bottom: 1px dashed var(--widget-border); padding-bottom: 8px; cursor: pointer; color: var(--text-color);">${headline}</li>`;
     });
 
-    // 資料載入完畢後：恢復帶有 Icon 的按鈕狀態
     spinner.style.display = "none";
     refreshBtn.disabled = false;
     refreshBtn.innerHTML = `<span class="material-symbols-rounded" style="font-size: 20px;">sync</span> 同步最新數據`;
 }
 
-// 按鈕點擊事件
 refreshBtn.addEventListener("click", function() {
-    spinner.style.display = "flex"; // 使用 flex 讓 spinner 內部置中
+    spinner.style.display = "flex";
     refreshBtn.disabled = true;
     refreshBtn.innerHTML = `<span class="material-symbols-rounded" style="font-size: 20px; animation: skeletonLoading 1s infinite;">sync</span> 努力連線中...`;
 
@@ -98,7 +91,7 @@ refreshBtn.addEventListener("click", function() {
 setTimeout(fetchMarketData, 1000);
 setTimeout(fetchRealWeather, 1000);
 
-// --- 3. 滑鼠微光軌跡特效 ---
+// 滑鼠微光軌跡特效
 const glowEffect = document.createElement('div');
 glowEffect.classList.add('mouse-glow');
 document.body.appendChild(glowEffect);
@@ -107,7 +100,7 @@ document.addEventListener('mousemove', function(e) {
     glowEffect.style.transform = `translate(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%))`;
 });
 
-// --- 4. 沉浸式新聞視窗控制 ---
+// 新聞視窗控制
 const modal = document.getElementById("news-modal");
 const closeModalBtn = document.getElementById("close-modal-btn");
 const modalTitle = document.getElementById("modal-title");
@@ -119,8 +112,6 @@ newsBox.addEventListener("click", function(e) {
         modalTitle.textContent = clickedTitle;
         modalBody.innerHTML = `
             這是關於「<b style="color: #3498db;">${clickedTitle}</b>」的詳細報導內容。<br><br>
-            在真實世界的企業專案中，當你點擊這裡時，前端會發送第二次 API 請求去抓取完整的新聞段落，並配上圖片與財經圖表。<br><br>
-            不過現在，你已經成功實作了前端最難的 UI 狀態切換與 z-index 圖層控制！恭喜達成這項里程碑！🎉
         `;
         modal.style.display = "flex";
     }
@@ -136,7 +127,7 @@ window.addEventListener("click", function(e) {
     }
 });
 
-// --- 9. 漢堡選單控制 (Hamburger Menu) ---
+// 漢堡選單控制
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('nav-links');
 
@@ -145,7 +136,7 @@ hamburger.addEventListener('click', () => {
     navLinks.classList.toggle('active');
 });
 
-// --- 10. 動態時鐘與專屬問候語 ---
+// 動態時鐘與專屬問候語
 const greetingTitle = document.getElementById("greeting-title");
 const timeDisplay = document.getElementById("current-time");
 
@@ -170,7 +161,6 @@ function updateClock() {
     const weekdays = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
     const day = weekdays[now.getDay()];
     
-    // 🌟 確保圖標與文字完美垂直置中
     greetingTitle.innerHTML = `
         <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
             <span class="material-symbols-rounded" style="font-size: 36px; color: #3498db;">trending_up</span> 

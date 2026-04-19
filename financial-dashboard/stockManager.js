@@ -1,4 +1,4 @@
-// 🌟 引入吐司通知模組
+// 通知
 import { showToast } from './toastManager.js';
 
 let myStocks = JSON.parse(localStorage.getItem("savedStocks")) || [];
@@ -42,7 +42,6 @@ function renderStocks() {
     customStockList.innerHTML = "";
 
     if (myStocks.length === 0) {
-        // 🌟 UX 升級：給空狀態加上專業的圖標與對齊
         customStockList.innerHTML = `
             <li class="empty-tip" style="display: flex; justify-content: center; align-items: center; gap: 8px;">
                 <span class="material-symbols-rounded" style="font-size: 20px;">playlist_add</span> 
@@ -63,15 +62,13 @@ function renderStocks() {
         li.style.justifyContent = "space-between";
         li.style.alignItems = "center";
         li.style.transition = "all 0.3s ease";
-        li.style.cursor = "grab"; // 提示使用者這裡可以抓取
+        li.style.cursor = "grab";
 
-        // 滑鼠移過去的互動發光
+        // 滑鼠移過去發光
         li.onmouseenter = () => li.style.border = "1px solid rgba(46, 204, 113, 0.5)";
         li.onmouseleave = () => li.style.border = "1px solid var(--widget-border)";
 
-        // ----------------------------------------------------
-        // 🌟 Drag & Drop 拖曳排序核心邏輯
-        // ----------------------------------------------------
+        // Drag&Drop拖曳排序核心邏輯
         li.draggable = true; 
         li.dataset.index = index; 
 
@@ -109,9 +106,7 @@ function renderStocks() {
             }
         });
 
-        // ----------------------------------------------------
-        // 🌟 UX 升級：加入拖曳圖標 (drag_indicator) 與按鈕圖標 (monitoring)
-        // ----------------------------------------------------
+        // 加入拖曳圖標與按鈕圖標
         li.innerHTML = `
             <div style="display: flex; align-items: center; gap: 10px;">
                 <span class="material-symbols-rounded" style="color: var(--text-muted); font-size: 20px;">drag_indicator</span>
@@ -131,7 +126,7 @@ function renderStocks() {
     });
 }
 
-// 刪除股票的功能，也要換成吐司通知
+// 刪除股票的功能，吐司通知
 window.removeStock = function(index) {
     const removedStock = myStocks[index];
     myStocks.splice(index, 1);

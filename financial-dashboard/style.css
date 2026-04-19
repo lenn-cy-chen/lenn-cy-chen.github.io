@@ -1,8 +1,5 @@
-/* =========================================
-   🎨 系統主題變數 (CSS Variables)
-========================================= */
 :root {
-    /* 深色模式 (預設：午夜微光) */
+    /* 深色模式(預設) */
     --bg-color: #0b0f19;
     --text-color: #ffffff;
     --text-muted: #aaaaaa;
@@ -14,7 +11,7 @@
 }
 
 body.light-mode {
-    /* 淺色模式 (溫暖晨光) */
+    /* 淺色模式 */
     --bg-color: #f0f2f5;
     --text-color: #333333;
     --text-muted: #666666;
@@ -25,9 +22,6 @@ body.light-mode {
         radial-gradient(circle at 85% 80%, rgba(52, 152, 219, 0.1) 0%, transparent 50%);
 }
 
-/* =========================================
-   🌐 全域基礎設定 (Base)
-========================================= */
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
     background-color: var(--bg-color);
@@ -70,9 +64,6 @@ ul {
     padding-left: 20px;
 }
 
-/* =========================================
-   📐 佈局設定 (Layout)
-========================================= */
 .dashboard-container {
     display: flex;
     flex-wrap: wrap;
@@ -84,9 +75,6 @@ ul {
     z-index: 10;
 }
 
-/* =========================================
-   🧭 導覽列與選單 (Navbar & Menu)
-========================================= */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -126,17 +114,12 @@ ul {
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
-/* --- 日夜切換按鈕專屬防護罩 --- */
 .theme-toggle {
     position: relative;
     z-index: 1050;
-    /* 🌟 層級調高，確保它永遠在最上層，絕對不被漢堡選單蓋住 */
     padding: 10px;
-    /* 🌟 增加內距，讓手指觸控的範圍變大（這點在手機版超重要） */
     user-select: none;
-    /* 防止手機長按時不小心把月亮「反白選取」 */
     -webkit-tap-highlight-color: transparent;
-    /* 點擊時不要出現預設的醜醜灰色方塊 */
 }
 
 .hamburger {
@@ -154,9 +137,6 @@ ul {
     transition: all 0.4s ease;
 }
 
-/* =========================================
-   🗂️ 卡片元件 (Widgets & Cards)
-========================================= */
 .widget {
     background: var(--widget-bg);
     backdrop-filter: blur(12px);
@@ -208,9 +188,6 @@ ul {
     text-align: center;
 }
 
-/* =========================================
-   🎛️ 按鈕與表單 (Buttons & Inputs)
-========================================= */
 .refresh-btn {
     background: transparent;
     color: var(--text-muted);
@@ -306,9 +283,6 @@ ul {
     border-radius: 8px;
 }
 
-/* =========================================
-   🪟 彈出視窗 (Modal)
-========================================= */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -367,9 +341,6 @@ ul {
     font-size: 15px;
 }
 
-/* =========================================
-   ✨ 動畫與特效 (Animations & Effects)
-========================================= */
 .mouse-glow {
     position: fixed;
     top: 0;
@@ -390,7 +361,6 @@ ul {
     border-radius: 8px;
 }
 
-/* 淺色模式下骨架屏稍微深一點點才明顯 */
 body.light-mode .skeleton {
     background: linear-gradient(90deg, rgba(0, 0, 0, 0.05) 25%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.05) 75%);
     background-size: 200% 100%;
@@ -435,15 +405,11 @@ body.light-mode .skeleton {
     margin-bottom: 15px;
 }
 
-/* =========================================
-   🍞 吐司通知系統 (Toast Notification)
-========================================= */
 #toast-container {
     position: fixed;
     top: 20px;
     right: 20px;
     z-index: 9999;
-    /* 絕對要在最上層 */
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -453,7 +419,6 @@ body.light-mode .skeleton {
     background: var(--widget-bg);
     color: var(--text-color);
     border-left: 4px solid #3498db;
-    /* 預設藍色邊框 */
     padding: 15px 25px;
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -462,11 +427,9 @@ body.light-mode .skeleton {
     min-width: 250px;
     font-size: 15px;
     letter-spacing: 1px;
-    /* 進場動畫：從右邊滑入 */
     animation: slideInRight 0.3s ease-out forwards;
 }
 
-/* 不同狀態的顏色 */
 .toast.error {
     border-left-color: #e74c3c;
 }
@@ -479,7 +442,6 @@ body.light-mode .skeleton {
     border-left-color: #f39c12;
 }
 
-/* 離場動畫的 Class */
 .toast.fade-out {
     animation: fadeOutRight 0.3s ease-in forwards;
 }
@@ -508,9 +470,6 @@ body.light-mode .skeleton {
     }
 }
 
-/* =========================================
-   📱 手機版響應式設計 (RWD)
-========================================= */
 @media (max-width: 768px) {
     .dashboard-container {
         padding: 0 10px;
@@ -533,7 +492,6 @@ body.light-mode .skeleton {
         height: 100vh;
         width: 250px;
         background: var(--bg-color);
-        /* 🌟 修復：改為呼叫變數，適應日夜模式 */
         backdrop-filter: blur(25px);
         flex-direction: column;
         align-items: center;

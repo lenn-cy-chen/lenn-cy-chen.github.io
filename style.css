@@ -1,6 +1,3 @@
-/* =========================================
-   🎨 全域與基礎設定 (預設為淺色白天)
-========================================= */
 html {
     scroll-behavior: smooth;
 }
@@ -33,19 +30,15 @@ body.dark-theme .highlight {
     color: #60a5fa;
 }
 
-/* 🌟 全域 Icon 對齊修正：讓所有 Icon 與文字置中 */
+/* 全域 Icon 對齊修正：讓所有 Icon 與文字置中 */
 .material-symbols-rounded {
     vertical-align: middle;
     font-size: 1.2em;
     /* 稍微放大一點點 */
     position: relative;
     top: -1px;
-    /* 微調高度 */
 }
 
-/* =========================================
-   🧭 導覽列
-========================================= */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -70,9 +63,8 @@ body.dark-theme .navbar {
     font-weight: bold;
     letter-spacing: 1px;
     text-decoration: none;
-    /* 去除超連結底線 */
     color: inherit;
-    /* 確保字體顏色跟著日夜模式走，不會變成預設藍色 */
+    /* 確保字體顏色跟著日夜模式走，不會變成預設 */
     transition: opacity 0.3s;
 }
 
@@ -114,7 +106,6 @@ body.dark-theme .logo {
     color: #3498db;
 }
 
-/* 🌟 導覽列按鈕：Icon 與文字水平排列 */
 .nav-theme-btn {
     display: flex;
     align-items: center;
@@ -150,19 +141,13 @@ body.dark-theme .nav-theme-btn:hover {
     color: #111;
 }
 
-/* =========================================
-   🌟 Hero 與特效 (你的經典重現)
-========================================= */
 .hero {
     text-align: center;
     padding: 60px 20px;
 }
 
-/* =========================================
-   🌟 旋轉頭像 (文字版)
-========================================= */
+/*  旋轉頭像 (文字) */
 .profile-pic {
-    /* 🌟 微調 1：稍微加大圓圈，讓四個字母更舒服 */
     width: 130px;
     height: 130px;
     background-color: #2c3e50;
@@ -173,16 +158,11 @@ body.dark-theme .nav-theme-btn:hover {
     align-items: center;
     justify-content: center;
     transition: all 0.6s ease;
-
-    /* 🌟 微調 2：加入專屬文字的樣式 */
     font-size: 32px;
-    /* 調整字體大小 */
     font-weight: bold;
-    /* 加粗 */
     letter-spacing: 1px;
-    /* 稍微拉開字距，增加質感 */
     font-family: Arial, sans-serif;
-    /* 圓頭頭像適合用乾淨的無襯線體 */
+    /* 乾淨的無襯線體 */
 }
 
 .profile-pic:hover {
@@ -190,17 +170,17 @@ body.dark-theme .nav-theme-btn:hover {
     box-shadow: 0 0 30px rgba(52, 152, 219, 0.7);
 }
 
-/* 🌟 新增：滑鼠「按下去」那一瞬間的物理回饋 */
+/* 按下去的物理回饋 */
 .profile-pic:active {
     transform: rotate(360deg) scale(0.9);
     /* 往內縮小 */
     box-shadow: 0 0 50px rgba(52, 152, 219, 1);
     /* 光環瞬間變得最亮、最飽和 */
     transition: all 0.1s ease;
-    /* 按下的反應要極快，不能有延遲感 */
+    /* 按下的反應不能有延遲感 */
 }
 
-/* 夜間模式的 hover (原本就有的) */
+/* 夜間模式的 hover */
 body.dark-theme .profile-pic {
     background-color: #1e293b;
     border: 2px solid rgba(255, 255, 255, 0.1);
@@ -210,7 +190,7 @@ body.dark-theme .profile-pic:hover {
     box-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
 }
 
-/* 🌟 新增：夜間模式按下時的極光白 */
+/* 夜間模式按下時的極光白 */
 body.dark-theme .profile-pic:active {
     box-shadow: 0 0 60px rgba(255, 255, 255, 1);
 }
@@ -224,7 +204,7 @@ body.dark-theme .profile-pic:active {
     margin-bottom: 10px;
 }
 
-/* 🌟 揮手動畫 */
+/* 揮手動畫 */
 .waving-hand {
     color: #f1c40f;
     font-size: 36px !important;
@@ -299,7 +279,6 @@ body.dark-theme .typing-container {
     }
 }
 
-/* 🌟 聯絡按鈕：水平排列， Icon 文字對齊 */
 .social-links {
     display: flex;
     justify-content: center;
@@ -377,9 +356,7 @@ body.dark-theme .skill-tag:hover {
     color: #111;
 }
 
-/* =========================================
-   🚀 作品區塊 (你的毛玻璃)
-========================================= */
+/* 作品區塊 (毛玻璃)*/
 .projects-section {
     padding: 40px 5% 60px;
     text-align: center;
@@ -463,7 +440,6 @@ body.dark-theme .tag {
     color: #e2e8f0;
 }
 
-/* 🌟 卡片按鈕： Icon 排列與對齊 */
 .card-btn {
     display: flex;
     align-items: center;
@@ -497,7 +473,6 @@ body.dark-theme .tag {
 }
 
 /* 滑鼠移過去，箭頭往右滑 */
-
 .outline-card-btn {
     background: transparent;
     border: 2px solid #3498db;

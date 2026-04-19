@@ -77,9 +77,7 @@
     font-weight: bold;
 }
 
-/* =========================================
-   新增習慣表單樣式
-========================================= */
+/* 新增習慣表單樣式 */
 .add-habit-form {
     display: flex;
     flex-direction: column;
@@ -120,14 +118,11 @@
     background-color: #2563eb;
 }
 
-/* =========================================
-   按鈕操作區與垃圾桶樣式
-========================================= */
+/* 按鈕操作區與垃圾桶樣式 */
 .action-buttons {
     display: flex;
     align-items: center;
     gap: 10px;
-    /* 兩個按鈕中間有一點空隙 */
 }
 
 .btn-delete {
@@ -143,5 +138,4 @@
 .btn-delete:hover {
     opacity: 1;
     transform: scale(1.1);
-    /* 滑鼠游標移過去時會放大 */
 }

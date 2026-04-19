@@ -1,19 +1,12 @@
-/* =========================================
-   🎨 品牌設計系統 (極簡風)
-========================================= */
+
 :root {
     --bg-color: #FAFAFA;
-    /* 極乾淨的微灰白，比純白更有質感 */
     --text-main: #1A1A1A;
-    /* 炭黑色，不刺眼 */
     --text-muted: #757575;
-    /* 淺灰色輔助字 */
     --accent-color: #4A6572;
-    /* Lenn專屬：莫蘭迪霧藍色 */
     --border-light: #EEEEEE;
 }
 
-/* 🌟 全站平滑滑動 */
 html {
     scroll-behavior: smooth;
 }
@@ -25,19 +18,14 @@ body {
     background-color: var(--bg-color);
     color: var(--text-main);
     line-height: 1.8;
-    /* 增加行高，提升閱讀的空氣感 */
 }
 
-/* =========================================
-   🧭 導覽列 (純白、極簡、細膩)
-========================================= */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 8%;
     background-color: rgba(250, 250, 250, 0.95);
-    /* 微透白 */
     backdrop-filter: blur(5px);
     position: sticky;
     top: 0;
@@ -51,7 +39,6 @@ body {
     text-decoration: none;
     color: var(--text-main);
     letter-spacing: 2px;
-    /* 拉開字距，瞬間高級 */
 }
 
 .logo span {
@@ -83,12 +70,8 @@ body {
     color: var(--text-main);
 }
 
-/* =========================================
-   🌟 主視覺 Hero (留白與高質感背景)
-========================================= */
 .hero {
     height: 70vh;
-    /* 換上一張超乾淨的白色系咖啡手沖圖 */
     background: linear-gradient(rgba(250, 250, 250, 0.3), rgba(250, 250, 250, 0.7)),
         url('https://images.unsplash.com/photo-1495474472201-4a6f238b556b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') center/cover;
     display: flex;
@@ -105,7 +88,6 @@ body {
 .hero h1 {
     font-size: 56px;
     font-weight: 300;
-    /* 極簡風喜歡用細字體當大標 */
     letter-spacing: 4px;
     margin-bottom: 20px;
     color: var(--text-main);
@@ -136,9 +118,6 @@ body {
     border-color: var(--accent-color);
 }
 
-/* =========================================
-   ☕ 精品豆單 (去邊框、去陰影的平面化設計)
-========================================= */
 .menu-section {
     padding: 100px 8%;
     background-color: #FFF;
@@ -170,7 +149,6 @@ body {
     margin: 0 auto;
 }
 
-/* 拿掉醜醜的背景和陰影，完全融入白底 */
 .menu-item {
     text-align: left;
     transition: transform 0.4s ease;
@@ -181,7 +159,6 @@ body {
     transform: translateY(-5px);
 }
 
-/* 暫時用高質感的純色塊代替圖片，並給予完美的比例 */
 .item-img {
     height: 350px;
     background-color: var(--bg-color);
@@ -190,7 +167,6 @@ body {
     overflow: hidden;
 }
 
-/* 替三張圖放上不同的 Unsplash 咖啡豆/手沖照片 */
 .img-ethiopia {
     background: url('https://images.unsplash.com/photo-1559525839-b184a4d698c7?auto=format&fit=crop&w=600&q=80') center/cover;
 }
@@ -223,9 +199,6 @@ body {
     font-weight: bold;
 }
 
-/* =========================================
-   🦶 頁尾
-========================================= */
 .minimal-footer {
     padding: 60px 20px;
     text-align: center;
@@ -246,9 +219,6 @@ body {
     margin: 0;
 }
 
-/* =========================================
-   🌟 Hero 輪播圖樣式
-========================================= */
 .hero {
     position: relative;
     overflow: hidden;
@@ -273,7 +243,6 @@ body {
     background-position: center;
     opacity: 0;
     transition: opacity 1.5s ease-in-out;
-    /* 1.5秒平滑淡入淡出 */
 }
 
 .slide.active {
@@ -295,9 +264,6 @@ body {
     z-index: 1;
 }
 
-/* =========================================
-   📖 品牌故事區塊
-========================================= */
 .intro-section {
     padding: 100px 8%;
     background-color: var(--bg-color);
@@ -330,9 +296,6 @@ body {
     border-radius: 4px;
 }
 
-/* =========================================
-   📍 聯絡與地圖區塊
-========================================= */
 .contact-section {
     padding: 80px 8%;
     background-color: #FFF;
@@ -379,7 +342,6 @@ body {
     font-size: 20px;
 }
 
-/* 訂閱表單 */
 .subscribe-box {
     background: var(--bg-color);
     padding: 30px;
@@ -438,7 +400,6 @@ body {
     background: #EEE;
 }
 
-/* 簡單的 RWD 修正，讓手機版變成單行排列 */
 @media (max-width: 768px) {
 
     .intro-grid,
@@ -452,13 +413,9 @@ body {
     }
 }
 
-/* =========================================
-   📱 手機版導覽列優化
-========================================= */
 @media (max-width: 768px) {
     .hamburger {
         display: block;
-        /* 在手機版顯示漢堡圖示 */
         z-index: 101;
     }
 
@@ -466,7 +423,6 @@ body {
         position: fixed;
         top: 0;
         right: -100%;
-        /* 預設藏在右邊螢幕外 */
         width: 70%;
         height: 100vh;
         background-color: var(--bg-color);
@@ -479,7 +435,6 @@ body {
         z-index: 100;
     }
 
-    /* 當選單被啟動時，滑入螢幕 */
     .nav-links.active {
         right: 0;
     }
@@ -489,22 +444,16 @@ body {
     }
 }
 
-/* 初始狀態：往下偏移並透明 */
 .reveal {
     opacity: 0;
     transform: translateY(30px);
     transition: all 0.8s ease-out;
 }
 
-/* 啟動狀態：回到原位並顯現 */
 .reveal.active {
     opacity: 1;
     transform: translateY(0);
 }
-
-/* =========================================
-   🛍️ 線上購物頁面專屬樣式
-========================================= */
 
 .shop-header {
     text-align: center;
@@ -523,7 +472,6 @@ body {
     color: var(--text-muted);
 }
 
-/* 🌟 大排版：左側邊欄 + 右網格 (Flexbox) */
 .shop-container {
     display: flex;
     max-width: 1200px;
@@ -531,20 +479,16 @@ body {
     padding: 0 5%;
     gap: 40px;
     align-items: flex-start;
-    /* 讓側邊欄不要跟著右邊一起拉長 */
 }
 
-/* 左側分類欄 */
 .shop-sidebar {
     width: 250px;
     flex-shrink: 0;
-    /* 確保側邊欄不會被壓縮 */
     background: #FFF;
     padding: 30px;
     border: 1px solid var(--border-light);
     border-radius: 8px;
     position: sticky;
-    /* 往下捲動時會吸頂 */
     top: 100px;
 }
 
@@ -577,7 +521,6 @@ body {
     font-weight: bold;
 }
 
-/* 右側商品網格 (Grid) */
 .shop-grid {
     flex: 1;
     display: grid;
@@ -585,7 +528,6 @@ body {
     gap: 30px;
 }
 
-/* 🌟 商品卡片細節 */
 .product-card {
     background: #FFF;
     border: 1px solid var(--border-light);
@@ -657,7 +599,6 @@ body {
     font-size: 16px;
 }
 
-/* 購物車按鈕 */
 .add-to-cart-btn {
     background: transparent;
     border: 1px solid var(--text-main);
@@ -682,28 +623,20 @@ body {
     border-color: var(--accent-color);
 }
 
-
-/* =========================================
-   📱 手機版 RWD 魔法：把並排變成堆疊！
-========================================= */
 @media (max-width: 900px) {
     .shop-container {
         flex-direction: column;
-        /* 讓側邊欄和網格從左右變成上下 */
     }
 
     .shop-sidebar {
         width: 100%;
-        /* 側邊欄佔滿寬度 */
         position: static;
-        /* 取消吸頂效果 */
         padding: 20px;
         box-sizing: border-box;
     }
 
     .category-list {
         display: flex;
-        /* 把分類變成橫向滑動或折行 */
         flex-wrap: wrap;
         gap: 15px;
     }
@@ -713,21 +646,13 @@ body {
     }
 }
 
-/* =========================================
-   🛒 購物車微互動與 Toast 通知
-========================================= */
-
-/* 按鈕加入成功時的狀態 */
 .add-to-cart-btn.added {
     background-color: #2ecc71;
-    /* 成功綠 */
     border-color: #2ecc71;
     color: #FFF;
     transform: scale(1.1);
-    /* 點擊瞬間微微放大 */
 }
 
-/* Toast 通知容器定位 */
 .toast-container {
     position: fixed;
     bottom: 30px;
@@ -738,10 +663,8 @@ body {
     gap: 15px;
 }
 
-/* 單個 Toast 的精緻樣式 */
 .toast {
     background-color: var(--text-main);
-    /* 炭黑色背景 */
     color: #FFF;
     padding: 12px 24px;
     border-radius: 8px;
@@ -750,21 +673,17 @@ body {
     align-items: center;
     gap: 12px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-    /* 滑入動畫 */
     animation: slideInRight 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
 }
 
 .toast .material-symbols-rounded {
     color: #2ecc71;
-    /* 圖示用綠色點綴 */
 }
 
-/* 準備消失的動畫 */
 .toast.fade-out {
     animation: fadeOutRight 0.4s ease forwards;
 }
 
-/* 定義關鍵影格 Keyframes */
 @keyframes slideInRight {
     from {
         transform: translateX(120%);
@@ -789,17 +708,14 @@ body {
     }
 }
 
-/* 手機版 Toast 位置微調 */
 @media (max-width: 768px) {
     .toast-container {
         bottom: 20px;
         right: 20px;
         left: 20px;
-        /* 在手機上置中並橫跨螢幕 */
     }
 
     .toast {
         justify-content: center;
-        /* 文字置中 */
     }
 }

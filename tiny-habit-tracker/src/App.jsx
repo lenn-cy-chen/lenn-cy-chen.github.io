@@ -1,10 +1,8 @@
-// 從 React 引入 useEffect
 import { useState, useEffect } from 'react'
 import confetti from 'canvas-confetti'
 import './App.css'
 
 function App() {
-  // 去 localStorage 找找看存檔
   const [habits, setHabits] = useState(() => {
     const savedHabits = localStorage.getItem('my-tiny-habits');
     // 如果有存檔，就把文字轉回陣列資料；如果沒有，就給預設值
@@ -17,7 +15,6 @@ function App() {
     }
   });
 
-  // habits 一有變化，就幫我存
   useEffect(() => {
     localStorage.setItem('my-tiny-habits', JSON.stringify(habits));
   }, [habits]);
@@ -27,18 +24,17 @@ function App() {
 
   // 新習慣加入清單的函數
   const addHabit = () => {
-    // 如果輸入框是空的就不要理他
     if (newTrigger.trim() === '' || newAction.trim() === '') return;
 
     // 創造一個新的習慣物件
     const newHabit = {
-      id: Date.now(), // 用現在的時間戳記當作不重複的 ID
+      id: Date.now(),
       trigger: newTrigger,
       action: newAction,
       completed: false
     };
 
-    // 把新習慣跟「舊的習慣陣列」合併在一起，存進 setHabits
+    // 把新習慣跟「舊的習慣陣列」合併在一起，存進setHabits
     setHabits([...habits, newHabit]);
 
     // 新增完之後，把輸入框清空
@@ -47,7 +43,6 @@ function App() {
   };
 
   const toggleHabit = (id) => {
-    // 這裡保留原本的 toggleHabit 和彩花程式碼
     setHabits(
       habits.map((habit) => {
         if (habit.id === id) {
@@ -66,7 +61,7 @@ function App() {
   };
 
   const deleteHabit = (id) => {
-    // 透過 filter 過濾掉想刪除的那個 id
+    // 透過filter過濾掉想刪除的那個id
     setHabits(habits.filter((habit) => habit.id !== id));
   };
   
@@ -105,7 +100,7 @@ function App() {
               <h3 className="action">✨ 行動：{habit.action}</h3>
             </div>
             
-            {/*新增一個 action-buttons 容器，把完成按鈕和刪除按鈕包起來 */}
+            {/* 新增一個action-buttons容器，把完成按鈕和刪除按鈕包起來 */}
             <div className="action-buttons">
               <button 
                 className={habit.completed ? "btn-completed" : "btn-pending"}
